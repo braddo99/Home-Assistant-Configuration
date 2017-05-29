@@ -1,0 +1,54 @@
+default_view:
+  view: yes
+  entities:
+    - group.living
+    - group.harmony
+    - group.kitchen
+    - group.office
+    - group.vestibule
+    - group.bedroom
+
+office:
+  name: Office
+  entities:
+    - light.color_office_front_left
+    - light.office_front_right
+    - light.office_rear_right
+    - light.office_rear_left
+
+vestibule:
+  name: Vestibule
+  entities:
+    - light.color_office_entry_1
+    - light.color_office_entry_2
+
+bedroom:
+  name: Bedroom
+  control: hidden
+  entities:
+    - switch.heart
+
+kitchen:
+  name: Kitchen
+  entities:
+    - light.ge_14294_inwall_smart_dimmer_level_7_0
+    - light.ge_14294_inwall_smart_dimmer_level_8_0
+    - light.ge_14294_inwall_smart_dimmer_level_4_0
+
+living:
+  name: Living Room
+  entities:
+    - light.ge_14294_inwall_smart_dimmer_level_5_0
+    - light.ge_14294_inwall_smart_dimmer_level_6_0
+
+harmony:
+  name: Harmony
+  control: hidden
+  entities:
+    - scene.movie_lights
+    - script.pause_the_show
+    - script.mute_the_sound
+    - script.switch_the_speakers
+    - script.volume_up
+    - script.volume_down
+    - switch.subwoofer

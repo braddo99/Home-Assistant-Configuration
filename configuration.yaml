@@ -1,0 +1,105 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret lat
+  longitude: !secret long
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 4
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/New_York
+
+  customize: !include customize.yaml
+
+camera:
+  - platform: mjpeg
+    mjpeg_url: !secret camurl
+    uesrname: !secret camuser
+    password: !secret campass
+
+
+# Show links to resources in log and frontend
+#introduction:
+
+#logger:
+#  default: error
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+http:
+  # Uncomment this to add a password (recommended!)
+  api_password: !secret hasspass
+  # Uncomment this if you are using SSL or running in Docker etc
+  # base_url: example.duckdns.org:8123
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+# Text to speech
+tts:
+  platform: google
+
+zwave:
+  usb_path: /dev/ttyACM0
+
+remote:
+  - platform: harmony
+    name: "Harmony Hub"
+    host: !secret harmonyip
+
+sensor:
+  - platform: template
+    sensors:
+      harmony_hub:
+        value_template: '{{ states.remote.harmony_hub.attributes.current_activity }}'
+        friendly_name: 'Current Activity'
+#     Weather Prediction
+  - platform: yr
+
+
+emulated_hue: !include emulated_hue.yaml
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+
+scene:
+  - name: Movie_Lights
+    entities:
+      light.ge_14294_inwall_smart_dimmer_level_5_0:
+        state: on
+        brightness: 50
+      light.ge_14294_inwall_smart_dimmer_level_7_0:
+        state: off
+      light.ge_14294_inwall_smart_dimmer_level_8_0:
+        state: off
+      light.ge_14294_inwall_smart_dimmer_level_6_0:
+        state: off
+      light.ge_14294_inwall_smart_dimmer_level_4_0:
+        state: off
+      switch.subwoofer:
+        state: on

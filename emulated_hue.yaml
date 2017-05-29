@@ -1,0 +1,7 @@
+host_ip: !secret hass_ip
+expose_by_default: false
+exposed_domains:
+  - light
+  - scene
+  - switch
+  - script
