@@ -7,23 +7,33 @@
     light.ge_14294_inwall_smart_dimmer_level_4_0:
       friendly_name: Task Light
       emulated_hue: true
+
     light.ge_14294_inwall_smart_dimmer_level_5_0:
       friendly_name: Living Room
       emulated_hue: true
     light.ge_14294_inwall_smart_dimmer_level_6_0:
       friendly_name: Closet
       emulated_hue: true
+
     light.hue_color_lamp_7:
       friendly_name: Bedroom Mood
       emulated_hue: true
-    scene.movie_lights:
-      emulated_hue: true
-      friendly_name: Movie Lights
+
     group.office:
       emulated_hue: true
     group.vestibule:
       emulated_hue: true
+    switch.deskaudio:
+      emulated_hue: true
 
+    scene.shutdown:
+      emulated_hue: true
+    scene.startup:
+      emulated_hue: true
+
+    scene.movie_lights:
+      emulated_hue: true
+      friendly_name: Movie Lights
     remote.harmony_hub:
       hidden: yes
     switch.subwoofer:
@@ -34,8 +44,9 @@
       emulated_hue: true
     script.switch_the_speakers:
       emulated_hue: true
-    script.volumeup:
+    script.volume_up:
       emulated_hue: true
-    script.volumedown:
+    script.volume_down:
       emulated_hue: true
+
 

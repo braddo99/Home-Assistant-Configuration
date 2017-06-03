@@ -2,8 +2,8 @@
   alias: 'Office evening shutdown'
   trigger:
     platform: state
-    entity_id: group.office
-    to: 'off'
+    entity_id: scene.shutdown
+    to: 'on'
   condition:
     - condition: time
       after: '17:00:00'
@@ -44,6 +44,14 @@
     - condition: time
       after: '06:30:00'
       before: '06:40:00'
+  condition:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
   action:
     - service: switch.turn_on
       entity_id: switch.heart

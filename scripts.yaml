@@ -39,20 +39,8 @@ volume_up:
         entity_id: remote.harmony_hub
         command: VolumeUp
         device: 41849703
-    - delay:
-        seconds: 1
-    - service: remote.send_command
-      data:
-        entity_id: remote.harmony_hub
-        command: VolumeUp
-        device: 41849703
-    - delay:
-        seconds: 1
-    - service: remote.send_command
-      data:
-        entity_id: remote.harmony_hub
-        command: VolumeUp
-        device: 41849703
+        num_repeats: 5
+        delay_secs: 0.25
 volume_down:
   alias: Volume Down
   sequence:
@@ -61,17 +49,5 @@ volume_down:
         entity_id: remote.harmony_hub
         command: VolumeDown
         device: 41849703
-    - delay:
-        seconds: 1
-    - service: remote.send_command
-      data:
-        entity_id: remote.harmony_hub
-        command: VolumeDown
-        device: 41849703
-    - delay:
-        milliseconds: 1
-    - service: remote.send_command
-      data:
-        entity_id: remote.harmony_hub
-        command: VolumeDown
-        device: 41849703
+        num_repeats: 5
+        delay_secs: 0.25

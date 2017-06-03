@@ -103,3 +103,16 @@ scene:
         state: off
       switch.subwoofer:
         state: on
+  - name: Shutdown
+    entities:
+      group.office:
+        state: off
+      switch.deskaudio:
+        state: off
+  - name: Startup
+    entities:
+      group.office:
+        state: on
+      switch.deskaudio:
+        state: on
+  
