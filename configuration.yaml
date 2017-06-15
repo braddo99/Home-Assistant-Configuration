@@ -111,8 +111,22 @@ scene:
         state: off
   - name: Startup
     entities:
-      group.office:
+      light.color_office_front_left:
         state: on
+        color_temp: 300
+        brightness: 255
+      light.office_front_right:
+        state: on
+        color_temp: 300
+        brightness: 255
+      light.office_rear_right:
+        state: on
+        color_temp: 300
+        brightness: 255
+      light.office_rear_left:
+        state: on
+        color_temp: 300
+        brightness: 255
       switch.deskaudio:
         state: on
   

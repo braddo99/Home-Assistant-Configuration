@@ -44,7 +44,6 @@
     - condition: time
       after: '06:30:00'
       before: '06:40:00'
-  condition:
     - condition: time
       weekday:
         - mon
