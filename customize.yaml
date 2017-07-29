@@ -1,17 +1,16 @@
-    light.ge_14294_inwall_smart_dimmer_level_8_0:
+    light.ge_14294_dimmer_1_level:
       friendly_name: Table
       emulated_hue: true
-    light.ge_14294_inwall_smart_dimmer_level_7_0:
+    light.ge_14294_dimmer_2_level:
       friendly_name: Kitchen
       emulated_hue: true
-    light.ge_14294_inwall_smart_dimmer_level_4_0:
+    light.ge_14294_dimmer_3_level:
       friendly_name: Task Light
       emulated_hue: true
-
-    light.ge_14294_inwall_smart_dimmer_level_5_0:
+    light.ge_14294_dimmer_4_level:
       friendly_name: Living Room
       emulated_hue: true
-    light.ge_14294_inwall_smart_dimmer_level_6_0:
+    light.ge_14294_dimmer_5_level:
       friendly_name: Closet
       emulated_hue: true
 
@@ -23,8 +22,12 @@
       emulated_hue: true
     group.vestibule:
       emulated_hue: true
+    group.kitchen:
+      emulated_hue: false
+    group.living:
+      emulated_hue: false
     switch.deskaudio:
-      emulated_hue: true
+      emulated_hue: false
 
     scene.shutdown:
       emulated_hue: true
@@ -37,7 +40,7 @@
     remote.harmony_hub:
       hidden: yes
     switch.subwoofer:
-      emulated_hue: true
+      emulated_hue: false
     script.mute_the_sound:
       emulated_hue: true
     script.pause_the_show:

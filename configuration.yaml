@@ -64,8 +64,13 @@ sun:
 tts:
   platform: google
 
+switch:
+  - platform: wake_on_lan
+    mac_address: !secret serverMac
+
 zwave:
   usb_path: /dev/ttyACM0
+  new_entity_ids: true
 
 remote:
   - platform: harmony
@@ -90,16 +95,16 @@ script: !include scripts.yaml
 scene:
   - name: Movie_Lights
     entities:
-      light.ge_14294_inwall_smart_dimmer_level_5_0:
+      light.ge_14294_dimmer_4_level:
         state: on
-        brightness: 50
-      light.ge_14294_inwall_smart_dimmer_level_7_0:
+        brightness: 60
+      light.ge_14294_dimmer_2_level:
         state: off
-      light.ge_14294_inwall_smart_dimmer_level_8_0:
+      light.ge_14294_dimmer_1_level:
         state: off
-      light.ge_14294_inwall_smart_dimmer_level_6_0:
+      light.ge_14294_dimmer_5_level:
         state: off
-      light.ge_14294_inwall_smart_dimmer_level_4_0:
+      light.ge_14294_dimmer_3_level:
         state: off
       switch.subwoofer:
         state: on
@@ -128,5 +133,7 @@ scene:
         color_temp: 300
         brightness: 255
       switch.deskaudio:
+        state: on
+      switch.wake_on_lan:
         state: on
   

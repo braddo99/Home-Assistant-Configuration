@@ -35,26 +35,26 @@
   action:
     - service: switch.turn_on
       entity_id: switch.subwoofer
-- id: kids_come_down
-  alias: "Kids come down"
-  trigger:
-    platform: time
-    after: '06:30:00'
-  condition:
-    - condition: time
-      after: '06:30:00'
-      before: '06:40:00'
-    - condition: time
-      weekday:
-        - mon
-        - tue
-        - wed
-        - thu
-        - fri
-  action:
-    - service: switch.turn_on
-      entity_id: switch.heart
-    - delay:
-        minutes: 30
-    - service: switch.turn_off
-      entity_id: switch.heart
+#- id: kids_come_down
+#  alias: "Kids come down"
+#  trigger:
+#    platform: time
+#    at: '06:30:00'
+#  condition:
+#    - condition: time
+#      after: '06:30:00'
+#      before: '06:40:00'
+#    - condition: time
+#      weekday:
+#        - mon
+#        - tue
+#        - wed
+#        - thu
+#        - fri
+#  action:
+#    - service: switch.turn_on
+#      entity_id: switch.heart
+#    - delay:
+#        minutes: 30
+#    - service: switch.turn_off
+#      entity_id: switch.heart

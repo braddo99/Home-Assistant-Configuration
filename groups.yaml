@@ -15,7 +15,9 @@ office:
     - light.office_front_right
     - light.office_rear_right
     - light.office_rear_left
-
+    - switch.wake_on_lan
+    - switch.deskaudio
+    - scene.shutdown
 vestibule:
   name: Vestibule
   entities:
@@ -31,15 +33,15 @@ bedroom:
 kitchen:
   name: Kitchen
   entities:
-    - light.ge_14294_inwall_smart_dimmer_level_7_0
-    - light.ge_14294_inwall_smart_dimmer_level_8_0
-    - light.ge_14294_inwall_smart_dimmer_level_4_0
+    - light.ge_14294_dimmer_2_level
+    - light.ge_14294_dimmer_1_level
+    - light.ge_14294_dimmer_3_level
 
 living:
   name: Living Room
   entities:
-    - light.ge_14294_inwall_smart_dimmer_level_5_0
-    - light.ge_14294_inwall_smart_dimmer_level_6_0
+    - light.ge_14294_dimmer_4_level
+    - light.ge_14294_dimmer_5_level
 
 harmony:
   name: Harmony
