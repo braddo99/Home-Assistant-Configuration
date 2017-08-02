@@ -5,8 +5,17 @@ default_view:
     - group.harmony
     - group.kitchen
     - group.office
+    - group.power
+    - group.desk
     - group.vestibule
     - group.bedroom
+    - group.family
+
+family:
+  name: Family
+  entities:
+    - device_tracker.lauren
+    - device_tracker.brad
 
 office:
   name: Office
@@ -15,9 +24,26 @@ office:
     - light.office_front_right
     - light.office_rear_right
     - light.office_rear_left
+
+desk:
+  name: Desk
+  entities:
     - switch.wake_on_lan
-    - switch.deskaudio
-    - scene.shutdown
+    - group.bose
+    - switch.monitor
+
+power:
+  name: Power
+  entities:
+    - scene.shut_down
+    - scene.startup
+
+bose:
+  name: Bose
+  entities:
+    - media_player.soundtouch_1
+    - media_player.soundtouch_2
+
 vestibule:
   name: Vestibule
   entities:

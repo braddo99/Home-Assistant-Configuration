@@ -22,14 +22,14 @@
       emulated_hue: true
     group.vestibule:
       emulated_hue: true
-    group.kitchen:
+    switch.monitor:
       emulated_hue: false
-    group.living:
-      emulated_hue: false
-    switch.deskaudio:
-      emulated_hue: false
+    group.desk:
+      emulated_hue: true
+    group.bose:
+      emulated_hue: true
 
-    scene.shutdown:
+    scene.shut_down:
       emulated_hue: true
     scene.startup:
       emulated_hue: true

@@ -19,6 +19,21 @@ camera:
     uesrname: !secret camuser
     password: !secret campass
 
+device_tracker:
+  - platform: nmap_tracker
+    hosts: 192.168.0.2-124
+    home_interval: 10
+    exclude: 192.168.0.119
+
+media_player:
+  - platform: soundtouch
+    host: 192.168.0.114
+    port: 8090
+    name: Soundtouch_1
+  - platform: soundtouch
+    host: 192.168.0.117
+    port: 8090
+    name: Soundtouch_2
 
 # Show links to resources in log and frontend
 #introduction:
@@ -108,11 +123,13 @@ scene:
         state: off
       switch.subwoofer:
         state: on
-  - name: Shutdown
+  - name: Shut_down
     entities:
       group.office:
         state: off
-      switch.deskaudio:
+      switch.monitor:
+        state: off
+      group.bose:
         state: off
   - name: Startup
     entities:
@@ -132,7 +149,9 @@ scene:
         state: on
         color_temp: 300
         brightness: 255
-      switch.deskaudio:
+      switch.monitor:
+        state: on
+      group.bose:
         state: on
       switch.wake_on_lan:
         state: on

@@ -2,7 +2,7 @@
   alias: 'Office evening shutdown'
   trigger:
     platform: state
-    entity_id: scene.shutdown
+    entity_id: scene.shut_down
     to: 'on'
   condition:
     - condition: time
@@ -11,8 +11,6 @@
   action:
     - service: light.turn_on
       entity_id: group.vestibule
-    - service: switch.turn_off
-      entity_id: switch.DeskAudio
     - delay:
         minutes: 1
     - service: light.turn_off
