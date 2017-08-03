@@ -6,8 +6,6 @@ default_view:
     - group.kitchen
     - group.office
     - group.power
-    - group.desk
-    - group.vestibule
     - group.bedroom
     - group.family
 
@@ -17,38 +15,31 @@ family:
     - device_tracker.lauren
     - device_tracker.brad
 
-office:
-  name: Office
-  entities:
-    - light.color_office_front_left
-    - light.office_front_right
-    - light.office_rear_right
-    - light.office_rear_left
-
-desk:
-  name: Desk
-  entities:
-    - switch.wake_on_lan
-    - group.bose
-    - switch.monitor
-
-power:
-  name: Power
-  entities:
-    - scene.shut_down
-    - scene.startup
-
 bose:
   name: Bose
   entities:
     - media_player.soundtouch_1
     - media_player.soundtouch_2
 
-vestibule:
-  name: Vestibule
+desk:
+  name: Desk
   entities:
-    - light.color_office_entry_1
-    - light.color_office_entry_2
+    - group.bose
+    - switch.monitor
+
+office:
+  name: Office
+  entities:
+    - light.office
+    - light.vestibule
+    - switch.wake_on_lan
+    - group.desk
+
+power:
+  name: Power
+  entities:
+    - scene.shut_down
+    - scene.startup
 
 bedroom:
   name: Bedroom
@@ -59,8 +50,8 @@ bedroom:
 kitchen:
   name: Kitchen
   entities:
-    - light.ge_14294_dimmer_2_level
     - light.ge_14294_dimmer_1_level
+    - light.ge_14294_dimmer_2_level
     - light.ge_14294_dimmer_3_level
 
 living:

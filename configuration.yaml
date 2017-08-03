@@ -13,6 +13,9 @@ homeassistant:
 
   customize: !include customize.yaml
 
+recorder:
+  purge_days: 5
+
 camera:
   - platform: mjpeg
     mjpeg_url: !secret camurl
@@ -39,7 +42,7 @@ media_player:
 #introduction:
 
 #logger:
-#  default: error
+#  default: debug
 
 # Enables the frontend
 frontend:
@@ -87,10 +90,17 @@ zwave:
   usb_path: /dev/ttyACM0
   new_entity_ids: true
 
+light:
+  platform: hue
+  host: !secret hue_ip
+  allow_in_emulated_hue: false
+  allow_unreachable: true
+  allow_hue_groups: true
+
 remote:
   - platform: harmony
     name: "Harmony Hub"
-    host: !secret harmonyip
+    host: !secret harmony_ip
 
 sensor:
   - platform: template
@@ -123,35 +133,21 @@ scene:
         state: off
       switch.subwoofer:
         state: on
+
   - name: Shut_down
     entities:
-      group.office:
+      light.office:
         state: off
-      switch.monitor:
+      group.desk:
         state: off
-      group.bose:
-        state: off
+
   - name: Startup
     entities:
-      light.color_office_front_left:
-        state: on
-        color_temp: 300
-        brightness: 255
-      light.office_front_right:
-        state: on
-        color_temp: 300
-        brightness: 255
-      light.office_rear_right:
-        state: on
-        color_temp: 300
-        brightness: 255
-      light.office_rear_left:
-        state: on
-        color_temp: 300
-        brightness: 255
-      switch.monitor:
-        state: on
-      group.bose:
+      light.office:
+         state: on
+         color_temp: 300
+         brightness: 255
+      group.desk:
         state: on
       switch.wake_on_lan:
         state: on

@@ -18,10 +18,11 @@
       friendly_name: Bedroom Mood
       emulated_hue: true
 
-    group.office:
+    light.office:
       emulated_hue: true
-    group.vestibule:
+    light.vestibule:
       emulated_hue: true
+# monitor is a wemo switch so alexa calls direct, not emulated_hue
     switch.monitor:
       emulated_hue: false
     group.desk:
@@ -39,6 +40,7 @@
       friendly_name: Movie Lights
     remote.harmony_hub:
       hidden: yes
+# subwoofer is a wemo switch so alexa calls direct, not emulated_hue
     switch.subwoofer:
       emulated_hue: false
     script.mute_the_sound:
