@@ -1,0 +1,81 @@
+    light.ge_14294_dimmer_1_level:
+      friendly_name: Table
+      emulated_hue_hidden: false
+    light.ge_14294_dimmer_2_level:
+      friendly_name: Kitchen
+      emulated_hue_hidden: false
+    light.ge_14294_dimmer_3_level:
+      friendly_name: Task Light
+      emulated_hue_hidden: false
+    light.ge_14294_dimmer_4_level:
+      friendly_name: Living Room
+      emulated_hue_hidden: false
+    light.ge_14294_dimmer_5_level:
+      friendly_name: Closet
+      emulated_hue_hidden: false
+
+    switch.christmas_tree:
+      icon: mdi:pine-tree
+      friendly_name: Christmas Tree
+      emulated_hue_hidden: false
+
+# christmas lights is a wemo switch so hidden from emulated hue
+    switch.christmas_lights:
+      icon: mdi:home
+      friendly_name: Christmas Lights
+      emulated_hue_hidden: true
+
+
+    light.hue_color_lamp_7:
+      friendly_name: Bedroom Mood
+      emulated_hue_hidden: false
+
+    light.office:
+      emulated_hue_hidden: false
+    light.vestibule:
+      emulated_hue_hidden: false
+    light.strip:
+      emulated_hue_hidden: false
+# monitor is a wemo switch so alexa calls direct, not emulated_hue_hidden
+    switch.monitor:
+      emulated_hue_hidden: true
+    group.desk:
+      emulated_hue_hidden: false
+    group.bose:
+      emulated_hue_hidden: false
+
+    scene.shut_down:
+      emulated_hue_hidden: false
+    scene.startup:
+      icon: mdi:power
+      emulated_hue_hidden: false
+
+    scene.movie_lights:
+      icon: mdi:ceiling-light
+      emulated_hue_hidden: false
+      friendly_name: Movie Lights
+    remote.harmony_hub:
+      hidden: yes
+# subwoofer is a wemo switch so alexa calls direct, not emulated_hue_hidden
+    switch.subwoofer:
+      icon: mdi:speaker
+      emulated_hue_hidden: true
+    script.mute_the_sound:
+      icon: mdi:volume-mute
+      emulated_hue_hidden: false
+    script.pause_the_show:
+      icon: mdi:pause
+      emulated_hue_hidden: false
+    script.switch_the_speakers:
+      icon: mdi:video-switch
+      emulated_hue_hidden: false
+    script.volume_up:
+      icon: mdi:volume-plus
+      emulated_hue_hidden: false
+    script.volume_down:
+      icon: mdi:volume-minus
+      emulated_hue_hidden: false
+
+    device_tracker.404e36256300:
+      friendly_name: device_tracker.brad
+      icon: mdi: human-male

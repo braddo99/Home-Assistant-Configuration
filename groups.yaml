@@ -8,11 +8,13 @@ default_view:
     - group.power
     - group.bedroom
     - group.family
+    - group.ecobee
 
 family:
   name: Family
   entities:
-    - device_tracker.lauren
+    - device_tracker.6c4d73163069
+    - device_tracker.404e36256300
     - device_tracker.brad
 
 bose:
@@ -35,11 +37,19 @@ office:
     - switch.wake_on_lan
     - group.desk
 
+ecobee:
+  name: Ecobee
+  entities:
+    - climate.upstairs
+    - climate.downstairs
+    - climate.attic
+
 power:
   name: Power
   entities:
     - scene.shut_down
     - scene.startup
+    - automation.out_of_town
 
 bedroom:
   name: Bedroom
@@ -59,6 +69,8 @@ living:
   entities:
     - light.ge_14294_dimmer_4_level
     - light.ge_14294_dimmer_5_level
+    - switch.christmas_tree
+    - switch.christmas_lights
 
 harmony:
   name: Harmony

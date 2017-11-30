@@ -1,61 +1,47 @@
 - id: show_the_way
-  alias: "Show the way"
+  alias: Show the way
   trigger:
     platform: state
     entity_id: light.office
     to: 'off'
   condition:
-    - condition: time
-      after: '17:00:00'
-      before: '23:59:00'
+  - condition: time
+    after: '17:00:00'
+    before: '23:59:00'
   action:
-    - service: light.turn_on
-      entity_id: light.vestibule
-    - delay:
-        minutes: 1
-    - service: light.turn_off
-      entity_id: light.vestibule
-
+  - service: light.turn_on
+    entity_id: light.vestibule
+  - delay:
+      minutes: 1
+  - service: light.turn_off
+    entity_id: light.vestibule
 - id: turn_off_subwoofer_if_harmony_off
-  alias: "Turn off subwoofer"
+  alias: Turn off subwoofer
   trigger:
     platform: state
     entity_id: remote.harmony_hub
     to: 'off'
   action:
-    - service: switch.turn_off
-      entity_id: switch.Subwoofer
-
+  - service: switch.turn_off
+    entity_id: switch.Subwoofer
 - id: turn_on_subwoofer_if_harmony_on
-  alias: "Turn on subwoofer"
+  alias: Turn on subwoofer
   trigger:
     platform: state
     entity_id: remote.harmony_hub
     to: 'on'
   action:
-    - service: switch.turn_on
-      entity_id: switch.subwoofer
-
-#- id: kids_come_down
-#  alias: "Kids come down"
-#  trigger:
-#    platform: time
-#    at: '06:30:00'
-#  condition:
-#    - condition: time
-#      after: '06:30:00'
-#      before: '06:40:00'
-#    - condition: time
-#      weekday:
-#        - mon
-#        - tue
-#        - wed
-#        - thu
-#        - fri
-#  action:
-#    - service: switch.turn_on
-#      entity_id: switch.heart
-#    - delay:
-#        minutes: 30
-#    - service: switch.turn_off
-#      entity_id: switch.heart
+  - service: switch.turn_on
+    entity_id: switch.subwoofer
+- action:
+  - data:
+      entity_id: light.strip
+    service: light.toggle
+  alias: Test Motion / Strip
+  condition: []
+  id: '1511892047216'
+  trigger:
+  - entity_id: binary_sensor.multi_1_sensor
+    from: 'off'
+    platform: state
+    to: 'on'

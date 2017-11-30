@@ -1,4 +1,5 @@
 host_ip: !secret hass_ip
+#type: alexa
 expose_by_default: false
 exposed_domains:
   - light

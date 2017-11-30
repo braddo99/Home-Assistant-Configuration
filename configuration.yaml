@@ -11,10 +11,11 @@ homeassistant:
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: America/New_York
 
-  customize: !include customize.yaml
+  customize: !include rename.yaml
 
 recorder:
-  purge_days: 5
+  purge_interval: 2
+  purge_keep_days: 5
 
 camera:
   - platform: mjpeg
@@ -22,19 +23,36 @@ camera:
     uesrname: !secret camuser
     password: !secret campass
 
+ecobee:
+  api_key: !secret ecobee_api
+  hold_temp: false
+
 device_tracker:
   - platform: nmap_tracker
     hosts: 192.168.0.2-124
     home_interval: 10
-    exclude: 192.168.0.119
+    exclude: !secret hass_ip
+  - platform: bluetooth_tracker
+#  - platform: tile
+#    username: !secret tile_email
+#    password: !secret tile_pass
+#    monitored_variables:
+#      - TILE
+#      - PHONE
+
+notify:
+  - platform: pushbullet
+    name: pushbullet
+    api_key: !secret pushbullet_API
 
 media_player:
+  - platform: cast
   - platform: soundtouch
-    host: 192.168.0.114
+    host: !secret bose1_ip
     port: 8090
     name: Soundtouch_1
   - platform: soundtouch
-    host: 192.168.0.117
+    host: !secret bose2_ip
     port: 8090
     name: Soundtouch_2
 
@@ -54,7 +72,7 @@ http:
   # Uncomment this to add a password (recommended!)
   api_password: !secret hasspass
   # Uncomment this if you are using SSL or running in Docker etc
-  # base_url: example.duckdns.org:8123
+  base_url: !secret hass_ip_port
 
 # Checks for available updates
 # Note: This component will send some information about your system to
@@ -85,10 +103,14 @@ tts:
 switch:
   - platform: wake_on_lan
     mac_address: !secret serverMac
+  - platform: tplink
+    name: "christmas tree"
+    host: !secret christmas_tree_IP
 
 zwave:
   usb_path: /dev/ttyACM0
   new_entity_ids: true
+  network_key: !secret zwave_key
 
 light:
   platform: hue
@@ -122,7 +144,7 @@ scene:
     entities:
       light.ge_14294_dimmer_4_level:
         state: on
-        brightness: 60
+        brightness: 100
       light.ge_14294_dimmer_2_level:
         state: off
       light.ge_14294_dimmer_1_level:
