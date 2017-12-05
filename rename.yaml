@@ -34,15 +34,15 @@
       emulated_hue_hidden: false
     light.vestibule:
       emulated_hue_hidden: false
-    light.strip:
-      emulated_hue_hidden: false
-# monitor is a wemo switch so alexa calls direct, not emulated_hue_hidden
-    switch.monitor:
+    switch.monitor: # Wemo    
       emulated_hue_hidden: true
     group.desk:
       emulated_hue_hidden: false
     group.bose:
       emulated_hue_hidden: false
+    light.hue_lightstrip_plus_1:
+      friendly_name: Strip 1
+      emulated_hue_hidden: true
 
     scene.shut_down:
       emulated_hue_hidden: false
@@ -75,7 +75,3 @@
     script.volume_down:
       icon: mdi:volume-minus
       emulated_hue_hidden: false
-
-    device_tracker.404e36256300:
-      friendly_name: device_tracker.brad
-      icon: mdi: human-male

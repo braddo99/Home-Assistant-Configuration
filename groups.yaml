@@ -15,7 +15,6 @@ family:
   entities:
     - device_tracker.6c4d73163069
     - device_tracker.404e36256300
-    - device_tracker.brad
 
 bose:
   name: Bose
@@ -71,6 +70,8 @@ living:
     - light.ge_14294_dimmer_5_level
     - switch.christmas_tree
     - switch.christmas_lights
+    - script.Blink_Door_Lights
+    - script.Blink_Door_Lights_Loop
 
 harmony:
   name: Harmony

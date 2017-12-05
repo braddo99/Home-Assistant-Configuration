@@ -106,6 +106,12 @@ switch:
   - platform: tplink
     name: "christmas tree"
     host: !secret christmas_tree_IP
+  - platform: tplink
+    name: "blink_1"
+    host: !secret blink_1_IP
+  - platform: tplink
+    name: "blink_2"
+    host: !secret blink_2_IP
 
 zwave:
   usb_path: /dev/ttyACM0

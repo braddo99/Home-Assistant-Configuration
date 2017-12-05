@@ -35,11 +35,34 @@
     entity_id: switch.subwoofer
 - action:
   - data:
-      entity_id: light.strip
-    service: light.toggle
-  alias: Test Motion / Strip
+      message: Front Door
+    service: notify.pushbullet
+  alias: Front_Door_Notify
   condition: []
   id: '1511892047216'
+  trigger:
+  - entity_id: binary_sensor.multi_3_sensor
+    from: 'off'
+    platform: state
+    to: 'on'
+- action:
+  - data:
+      entity_id: light.hue_color_lamp_1
+    service: light.turn_on
+  - data:
+      entity_id: light.hue_lightstrip_plus_1
+    service: light.toggle
+  - delay: 00:00:04
+  - data:
+      entity_id: light.hue_lightstrip_plus_1
+    service: light.toggle
+  - delay: 00:05:00
+  - data:
+      entity_id: light.hue_color_lamp_1
+    service: light.turn_off
+  alias: Stair Motion Light
+  condition: []
+  id: '1512490773153'
   trigger:
   - entity_id: binary_sensor.multi_1_sensor
     from: 'off'

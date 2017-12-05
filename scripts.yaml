@@ -1,53 +1,80 @@
 pause_the_show:
   alias: Pause the Show
   sequence:
-    - service: remote.send_command
-      data_template:
-        entity_id: remote.harmony_hub
-        command: Pause
-        device: >-
-          {% if is_state("sensor.harmony_hub", "Watch TV") %}
-            41849701
-          {% elif is_state("sensor.harmony_hub", "Watch BluRay") %}
-            41849699
-          {% elif is_state("sensor.harmony_hub", "Watch Netflix") %}
-            41849701
-          {% elif is_state("sensor.harmony_hub", "Play Xbox 360") %}
-            41849700
-          {% endif %}
+  - service: remote.send_command
+    data_template:
+      entity_id: remote.harmony_hub
+      command: Pause
+      device: "{% if is_state(\"sensor.harmony_hub\", \"Watch TV\") %}\n  41849701\n\
+        {% elif is_state(\"sensor.harmony_hub\", \"Watch BluRay\") %}\n  41849699\n\
+        {% elif is_state(\"sensor.harmony_hub\", \"Watch Netflix\") %}\n  41849701\n\
+        {% elif is_state(\"sensor.harmony_hub\", \"Play Xbox 360\") %}\n  41849700\n\
+        {% endif %}"
 mute_the_sound:
   alias: Mute the Sound
   sequence:
-    - service: remote.send_command
-      data:
-        entity_id: remote.harmony_hub
-        command: Mute
-        device: 41849703
+  - service: remote.send_command
+    data:
+      entity_id: remote.harmony_hub
+      command: Mute
+      device: 41849703
 switch_the_speakers:
   alias: Switch the Speakers
   sequence:
-    - service: remote.send_command
-      data:
-        entity_id: remote.harmony_hub
-        command: Speakers
-        device: 41849703
+  - service: remote.send_command
+    data:
+      entity_id: remote.harmony_hub
+      command: Speakers
+      device: 41849703
 volume_up:
   alias: Volume Up
   sequence:
-    - service: remote.send_command
-      data:
-        entity_id: remote.harmony_hub
-        command: VolumeUp
-        device: 41849703
-        num_repeats: 5
-        delay_secs: 0.25
+  - service: remote.send_command
+    data:
+      entity_id: remote.harmony_hub
+      command: VolumeUp
+      device: 41849703
+      num_repeats: 5
+      delay_secs: 0.25
 volume_down:
   alias: Volume Down
   sequence:
-    - service: remote.send_command
-      data:
-        entity_id: remote.harmony_hub
-        command: VolumeDown
-        device: 41849703
-        num_repeats: 5
-        delay_secs: 0.25
+  - service: remote.send_command
+    data:
+      entity_id: remote.harmony_hub
+      command: VolumeDown
+      device: 41849703
+      num_repeats: 5
+      delay_secs: 0.25
+blink_door_lights:
+  alias: Blink Door Lights
+  sequence:
+  - data:
+      entity_id: script.blink_door_lights_loop
+    service: script.turn_off
+  - data:
+      entity_id: switch.blink_1
+    service: switch.turn_on
+  - delay: 00:00:01
+  - data:
+      entity_id: switch.blink_2
+    service: switch.turn_on
+  - data:
+      entity_id: switch.blink_1
+    service: switch.turn_off
+  - delay: 00:00:01
+  - data:
+      entity_id: switch.blink_2
+    service: switch.turn_off
+  - data:
+      entity_id: script.blink_door_lights_loop
+    service: script.turn_on
+blink_door_lights_loop:
+  alias: Blink Door Lights Loop
+  sequence:
+  - data:
+      entity_id: script.blink_door_lights
+    service: script.turn_off
+  - data:
+      entity_id: script.blink_door_lights
+    service: script.turn_on
