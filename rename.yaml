@@ -34,6 +34,10 @@
       emulated_hue_hidden: false
     light.vestibule:
       emulated_hue_hidden: false
+    light.hue_color_lamp_1:
+      friendly_name: Attic Stair
+      emulated_hue_hidden: true
+
     switch.monitor: # Wemo    
       emulated_hue_hidden: true
     group.desk:

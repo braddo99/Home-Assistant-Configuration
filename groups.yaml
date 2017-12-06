@@ -33,6 +33,8 @@ office:
   entities:
     - light.office
     - light.vestibule
+    - light.hue_lightstrip_plus_1
+    - light.hue_color_lamp_1
     - switch.wake_on_lan
     - group.desk
 
@@ -71,7 +73,7 @@ living:
     - switch.christmas_tree
     - switch.christmas_lights
     - script.Blink_Door_Lights
-    - script.Blink_Door_Lights_Loop
+    - script.Blink_Stop
 
 harmony:
   name: Harmony

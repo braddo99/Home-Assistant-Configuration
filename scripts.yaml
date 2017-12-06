@@ -78,3 +78,18 @@ blink_door_lights_loop:
   - data:
       entity_id: script.blink_door_lights
     service: script.turn_on
+blink_stop:
+  alias: Blink Stop
+  sequence:
+  - data:
+      entity_id: script.blink_door_lights_loop
+    service: script.turn_off
+  - data:
+      entity_id: script.blink_door_lights
+    service: script.turn_off
+  - data:
+      entity_id: switch.blink_1
+    service: switch.turn_off
+  - data:
+      entity_id: switch.blink_2
+    service: switch.turn_off
