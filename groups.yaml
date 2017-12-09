@@ -9,6 +9,7 @@ default_view:
     - group.bedroom
     - group.family
     - group.ecobee
+    - group.cameras
 
 family:
   name: Family
@@ -16,11 +17,14 @@ family:
     - device_tracker.6c4d73163069
     - device_tracker.404e36256300
 
+cameras:
+  - camera.front_door
+
 bose:
   name: Bose
   entities:
-    - media_player.soundtouch_1
-    - media_player.soundtouch_2
+    - media_player.bose_left
+    - media_player.bose_right
 
 desk:
   name: Desk

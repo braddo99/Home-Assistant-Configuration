@@ -1,6 +1,7 @@
     light.ge_14294_dimmer_1_level:
       friendly_name: Table
       emulated_hue_hidden: false
+      emulated_hue_name: "Table"
     light.ge_14294_dimmer_2_level:
       friendly_name: Kitchen
       emulated_hue_hidden: false

@@ -18,27 +18,31 @@ recorder:
   purge_keep_days: 5
 
 camera:
-  - platform: mjpeg
-    mjpeg_url: !secret camurl
-    uesrname: !secret camuser
-    password: !secret campass
+  - platform: skybell
 
+#whitelist_external_dirs:
+#  - /home/docker/hass/captures
+  
 ecobee:
   api_key: !secret ecobee_api
   hold_temp: false
 
+skybell:
+  username: !secret skybell_user
+  password: !secret skybell_pass
+
+binary_sensor:
+  - platform: skybell
+    monitored_conditions:
+      - button
+      - motion
+
 device_tracker:
   - platform: nmap_tracker
-    hosts: 192.168.0.2-124
+    hosts: 192.168.0.100-199
     home_interval: 10
     exclude: !secret hass_ip
-  - platform: bluetooth_tracker
-#  - platform: tile
-#    username: !secret tile_email
-#    password: !secret tile_pass
-#    monitored_variables:
-#      - TILE
-#      - PHONE
+#  - platform: bluetooth_tracker
 
 notify:
   - platform: pushbullet
@@ -46,18 +50,14 @@ notify:
     api_key: !secret pushbullet_API
 
 media_player:
-  - platform: cast
   - platform: soundtouch
-    host: !secret bose1_ip
+    host: !secret bose_right_ip
     port: 8090
-    name: Soundtouch_1
+    name: bose_right
   - platform: soundtouch
-    host: !secret bose2_ip
+    host: !secret bose_left_ip
     port: 8090
-    name: Soundtouch_2
-
-# Show links to resources in log and frontend
-#introduction:
+    name: bose_left
 
 #logger:
 #  default: debug
@@ -72,7 +72,7 @@ http:
   # Uncomment this to add a password (recommended!)
   api_password: !secret hasspass
   # Uncomment this if you are using SSL or running in Docker etc
-  base_url: !secret hass_ip_port
+  base_url: !secret hass_url
 
 # Checks for available updates
 # Note: This component will send some information about your system to

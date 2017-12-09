@@ -11,8 +11,12 @@
   action:
   - service: light.turn_on
     entity_id: light.vestibule
+  - service: light.turn_on
+    entity_id: light.hue_color_lamp_1
   - delay:
       minutes: 1
+  - service: light.turn_off
+    entity_id: light.hue_color_lamp_1
   - service: light.turn_off
     entity_id: light.vestibule
 - id: turn_off_subwoofer_if_harmony_off
@@ -41,7 +45,7 @@
   condition: []
   id: '1511892047216'
   trigger:
-  - entity_id: binary_sensor.multi_3_sensor
+  - entity_id: binary_sensor.porch_multi_sensor
     from: 'off'
     platform: state
     to: 'on'
@@ -64,7 +68,7 @@
   condition: []
   id: '1512490773153'
   trigger:
-  - entity_id: binary_sensor.multi_1_sensor
+  - entity_id: binary_sensor.attic_multi_sensor
     from: 'off'
     platform: state
     to: 'on'
