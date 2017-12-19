@@ -76,8 +76,13 @@ living:
     - light.ge_14294_dimmer_5_level
     - switch.christmas_tree
     - switch.christmas_lights
-    - script.Blink_Door_Lights
-    - script.Blink_Stop
+    - group.blink
+
+blink:
+  name: Blink
+  entities:
+    - switch.blink_1
+    - switch.blink_2
 
 harmony:
   name: Harmony

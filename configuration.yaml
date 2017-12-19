@@ -11,17 +11,17 @@ homeassistant:
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: America/New_York
 
+  whitelist_external_dirs:
+    - '/config/captures'
+
+
   customize: !include rename.yaml
 
-recorder:
-  purge_interval: 2
-  purge_keep_days: 5
+recorder: !include recorder.yaml
 
 camera:
   - platform: skybell
 
-#whitelist_external_dirs:
-#  - /home/docker/hass/captures
   
 ecobee:
   api_key: !secret ecobee_api
@@ -179,4 +179,3 @@ scene:
         state: on
       switch.wake_on_lan:
         state: on
-  

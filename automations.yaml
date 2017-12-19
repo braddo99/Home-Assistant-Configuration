@@ -39,9 +39,14 @@
     entity_id: switch.subwoofer
 - action:
   - data:
-      message: Front Door
-    service: notify.pushbullet
-  alias: Front_Door_Notify
+      entity_id: switch.blink_2
+    service: switch.turn_on
+  - delay: 00:05:00
+  - alias: ''
+    data:
+      entity_id: switch.blink_2
+    service: switch.turn_off
+  alias: Front_Door_Notify_With_Pic
   condition: []
   id: '1511892047216'
   trigger:
@@ -53,13 +58,10 @@
   - data:
       entity_id: light.hue_color_lamp_1
     service: light.turn_on
-  - data:
-      entity_id: light.hue_lightstrip_plus_1
-    service: light.toggle
-  - delay: 00:00:04
-  - data:
-      entity_id: light.hue_lightstrip_plus_1
-    service: light.toggle
+  - alias: ''
+    data:
+      message: attic
+    service: notify.pushbullet
   - delay: 00:05:00
   - data:
       entity_id: light.hue_color_lamp_1
