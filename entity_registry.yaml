@@ -1,0 +1,272 @@
+light.ge_14294_dimmer_3_level:
+  name:
+  platform: zwave
+  unique_id: 4-72057594109853697
+light.ge_14294_dimmer_4_level:
+  name:
+  platform: zwave
+  unique_id: 5-72057594126630913
+light.ge_14294_dimmer_5_level:
+  name:
+  platform: zwave
+  unique_id: 6-72057594143408129
+light.ge_14294_dimmer_2_level:
+  name:
+  platform: zwave
+  unique_id: 7-72057594160185345
+light.ge_14294_dimmer_1_level:
+  name:
+  platform: zwave
+  unique_id: 8-72057594176962561
+binary_sensor.attic_multi_sensor:
+  name:
+  platform: zwave
+  unique_id: 11-72057594227458048
+sensor.attic_multi_temperature:
+  name:
+  platform: zwave
+  unique_id: 11-72057594227474450
+sensor.attic_multi_luminance:
+  name:
+  platform: zwave
+  unique_id: 11-72057594227474482
+sensor.attic_multi_relative_humidity:
+  name:
+  platform: zwave
+  unique_id: 11-72057594227474514
+sensor.attic_multi_ultraviolet:
+  name:
+  platform: zwave
+  unique_id: 11-72057594227474866
+sensor.attic_multi_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 11-72057594228523009
+sensor.attic_multi_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 11-72057594228523025
+sensor.attic_multi_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 11-72057594228523041
+sensor.attic_multi_burglar:
+  name:
+  platform: zwave
+  unique_id: 11-72057594228523169
+binary_sensor.closet_multi_sensor:
+  name:
+  platform: zwave
+  unique_id: 12-72057594244235264
+sensor.closet_multi_temperature:
+  name:
+  platform: zwave
+  unique_id: 12-72057594244251666
+sensor.closet_multi_luminance:
+  name:
+  platform: zwave
+  unique_id: 12-72057594244251698
+sensor.closet_multi_relative_humidity:
+  name:
+  platform: zwave
+  unique_id: 12-72057594244251730
+sensor.closet_multi_ultraviolet:
+  name:
+  platform: zwave
+  unique_id: 12-72057594244252082
+sensor.closet_multi_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 12-72057594245300225
+sensor.closet_multi_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 12-72057594245300241
+sensor.closet_multi_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 12-72057594245300257
+sensor.closet_multi_burglar:
+  name:
+  platform: zwave
+  unique_id: 12-72057594245300385
+binary_sensor.porch_multi_sensor:
+  name:
+  platform: zwave
+  unique_id: 13-72057594261012480
+sensor.porch_multi_temperature:
+  name:
+  platform: zwave
+  unique_id: 13-72057594261028882
+sensor.porch_multi_luminance:
+  name:
+  platform: zwave
+  unique_id: 13-72057594261028914
+sensor.porch_multi_relative_humidity:
+  name:
+  platform: zwave
+  unique_id: 13-72057594261028946
+sensor.porch_multi_ultraviolet:
+  name:
+  platform: zwave
+  unique_id: 13-72057594261029298
+sensor.porch_multi_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 13-72057594262077441
+sensor.porch_multi_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 13-72057594262077457
+sensor.porch_multi_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 13-72057594262077473
+sensor.porch_multi_burglar:
+  name:
+  platform: zwave
+  unique_id: 13-72057594262077601
+binary_sensor.front_door_open_sensor:
+  name:
+  platform: zwave
+  unique_id: 14-72057594277789696
+sensor.front_door_open_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 14-72057594278854657
+sensor.front_door_open_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 14-72057594278854673
+sensor.front_door_open_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 14-72057594278854689
+sensor.front_door_open_access_control:
+  name:
+  platform: zwave
+  unique_id: 14-72057594278854801
+sensor.front_door_open_burglar:
+  name:
+  platform: zwave
+  unique_id: 14-72057594278854817
+sensor.front_door_open_system:
+  name:
+  platform: zwave
+  unique_id: 14-72057594278854849
+sensor.front_door_open_emergency:
+  name:
+  platform: zwave
+  unique_id: 14-72057594278854865
+sensor.front_door_open_clock:
+  name:
+  platform: zwave
+  unique_id: 14-72057594278854881
+sensor.front_door_open_appliance:
+  name:
+  platform: zwave
+  unique_id: 14-72057594278854897
+media_player.chromecast8104:
+  name:
+  platform: cast
+  unique_id: ffc10cf9-5077-d91f-0f1d-47a9e7a70b4a
+switch.christmas_lights:
+  name:
+  platform: wemo
+  unique_id: 221701K01006EB
+switch.subwoofer:
+  name:
+  platform: wemo
+  unique_id: 221701K010047F
+switch.monitor:
+  name:
+  platform: wemo
+  unique_id: 221701K01001BA
+light.hue_color_lamp_2:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:10:54:1d:9b-0b
+light.hue_color_lamp_3:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:10:54:1f:02-0b
+light.color_office_entry_2:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:07:4a:43-0b
+light.color_office_front_left:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:05:f1:8e-0b
+light.color_office_entry_1:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:07:51:7f-0b
+light.hue_color_lamp_7:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:33:41:d6-0b
+light.office_front_right:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:0a:b4:93-0b
+light.office_rear_left:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:0a:9e:4d-0b
+light.office_rear_right:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:0a:b6:ac-0b
+light.hue_color_lamp_1:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:00:f6:d3:bb-0b
+light.hue_lightstrip_plus_1:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:17:71:bc-0b
+light.hue_color_downlight_1:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:ab:3e:66-0b
+zwave.aeotec_zw090_zstick_gen5:
+  name:
+  platform: zwave
+  unique_id: node-1
+zwave.ge_14294_dimmer_3:
+  name:
+  platform: zwave
+  unique_id: node-4
+zwave.ge_14294_dimmer_4:
+  name:
+  platform: zwave
+  unique_id: node-5
+zwave.ge_14294_dimmer_5:
+  name:
+  platform: zwave
+  unique_id: node-6
+zwave.ge_14294_dimmer_2:
+  name:
+  platform: zwave
+  unique_id: node-7
+zwave.ge_14294_dimmer_1:
+  name:
+  platform: zwave
+  unique_id: node-8
+zwave.attic_multi:
+  name:
+  platform: zwave
+  unique_id: node-11
+zwave.closet_multi:
+  name:
+  platform: zwave
+  unique_id: node-12
+zwave.porch_multi:
+  name:
+  platform: zwave
+  unique_id: node-13
+zwave.front_door_open:
+  name:
+  platform: zwave
+  unique_id: node-14

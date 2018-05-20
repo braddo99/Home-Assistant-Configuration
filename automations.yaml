@@ -1,3 +1,19 @@
+- id: motion_bath_night_light
+  alias: Bath Night Light
+  trigger:
+    entity_id: binary_sensor.closet_multi_sensor
+    platform: state
+    to: 'on'
+  condition:
+  - condition: time
+    after: '17:00:00'
+    before: 05:00:00
+  action:
+  - service: scene.turn_on
+    entity_id: scene.bath_night_light
+  - delay: 00:05:00
+  - service: light.turn_off
+    entity_id: light.hue_color_downlight_1
 - id: show_the_way
   alias: Show the way
   trigger:
@@ -39,23 +55,6 @@
     entity_id: switch.subwoofer
 - action:
   - data:
-      entity_id: switch.blink_2
-    service: switch.turn_on
-  - delay: 00:05:00
-  - alias: ''
-    data:
-      entity_id: switch.blink_2
-    service: switch.turn_off
-  alias: Front_Door_Notify_With_Pic
-  condition: []
-  id: '1511892047216'
-  trigger:
-  - entity_id: binary_sensor.porch_multi_sensor
-    from: 'off'
-    platform: state
-    to: 'on'
-- action:
-  - data:
       entity_id: light.hue_color_lamp_1
     service: light.turn_on
   - alias: ''
@@ -74,3 +73,21 @@
     from: 'off'
     platform: state
     to: 'on'
+- alias: DoorMotionLight
+  id: '1522690779412'
+  condition: []
+  trigger:
+  - entity_id: binary_sensor.porch_multi_sensor
+    from: 'off'
+    platform: state
+    to: 'on'
+  action:
+  - service: light.turn_on
+    data:
+      entity_id: light.hue_lightstrip_plus_1
+      rgb_color: [255,0,0]
+  - delay: '00:00:05'
+  - service: light.turn_on
+    data:
+      entity_id: light.hue_lightstrip_plus_1
+      rgb_color: [255,255,255]

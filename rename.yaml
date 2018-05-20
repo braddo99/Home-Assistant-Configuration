@@ -15,21 +15,35 @@
       friendly_name: Closet
       emulated_hue_hidden: false
 
-    switch.christmas_tree:
-      icon: mdi:pine-tree
-      friendly_name: Christmas Tree
-      emulated_hue_hidden: false
+#    switch.christmas_tree:
+#      icon: mdi:pine-tree
+#      friendly_name: Christmas Tree
+#      emulated_hue_hidden: false
 
 # christmas lights is a wemo switch so hidden from emulated hue
     switch.christmas_lights:
       icon: mdi:home
       friendly_name: Christmas Lights
       emulated_hue_hidden: true
+  
+#    switch.blink_1:
+#      icon: mdi:library-music
+#      friendly_name: Mixer
+#      emulated_hue_hidden: true
+  
+    switch.blink_2:
+      icon: mdi:tune-vertical
+      friendly_name: Mixer
+      emulated_hue_hidden: false
 
 
     light.hue_color_lamp_7:
-      friendly_name: Bedroom Mood
-      emulated_hue_hidden: false
+      friendly_name: Mood Light
+      emulated_hue_hidden: true
+
+    light.hue_color_downlight_1:
+      friendly_name: Bath Light
+      emulated_hue_hidden: true
 
     light.office:
       emulated_hue_hidden: false
@@ -39,17 +53,18 @@
       friendly_name: Attic Stair
       emulated_hue_hidden: true
 
-    switch.monitor: # Wemo    
+# Wemo so Alexa can call direct
+    switch.monitor:
+      friendly_name: Monitor
       emulated_hue_hidden: true
-    group.desk:
+    light.hue_lightstrip_plus_1:
+      friendly_name: Backlight
       emulated_hue_hidden: false
+
     group.bose:
       emulated_hue_hidden: false
-    light.hue_lightstrip_plus_1:
-      friendly_name: Strip 1
-      emulated_hue_hidden: true
 
-    scene.shut_down:
+    scene.shutdown:
       emulated_hue_hidden: false
     scene.startup:
       icon: mdi:power

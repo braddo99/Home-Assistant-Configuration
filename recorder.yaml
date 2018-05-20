@@ -2,6 +2,8 @@ purge_interval: 2
 purge_keep_days: 5
 db_url: !secret mysql_string
 exclude:
+  domains:
+    - zwave
   entities:
     - sensor.Attic_Multi_Burglar
     - sensor.Attic_Multi_Alarm_Level
@@ -18,3 +20,10 @@ exclude:
     - sensor.Closet_Multi_Alarm_Type
     - sensor.Closet_Multi_Ultraviolet
     - sensor.Closet_Multi_Sourcenodeid
+    - sensor.front_door_open_alarm_level
+    - sensor.front_door_open_appliance
+    - sensor.front_door_open_burglar
+    - sensor.front_door_open_clock
+    - sensor.front_door_open_emergency
+    - sensor.front_door_open_sourcenodeid
+    - sensor.front_door_open_system

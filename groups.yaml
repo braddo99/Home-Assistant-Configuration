@@ -15,7 +15,7 @@ family:
   name: Family
   entities:
     - device_tracker.6c4d73163069
-    - device_tracker.404e36256300
+    - device_tracker.b4f1dae9a8e6
 
 cameras:
   - camera.front_door
@@ -26,10 +26,10 @@ bose:
     - media_player.bose_left
     - media_player.bose_right
 
-desk:
-  name: Desk
+display:
+  name: Display
   entities:
-    - group.bose
+    - light.hue_lightstrip_plus_1
     - switch.monitor
 
 office:
@@ -37,10 +37,11 @@ office:
   entities:
     - light.office
     - light.vestibule
-    - light.hue_lightstrip_plus_1
     - light.hue_color_lamp_1
     - switch.wake_on_lan
-    - group.desk
+    - group.display
+    - group.bose
+    - switch.blink_2
 
 ecobee:
   name: Ecobee
@@ -52,15 +53,14 @@ ecobee:
 power:
   name: Power
   entities:
-    - scene.shut_down
+    - scene.shutdown
     - scene.startup
-    - automation.out_of_town
 
 bedroom:
   name: Bedroom
-  control: hidden
   entities:
-    - switch.heart
+    - light.hue_color_lamp_7
+    - light.hue_color_downlight_1
 
 kitchen:
   name: Kitchen
@@ -74,15 +74,8 @@ living:
   entities:
     - light.ge_14294_dimmer_4_level
     - light.ge_14294_dimmer_5_level
-    - switch.christmas_tree
-    - switch.christmas_lights
-    - group.blink
-
-blink:
-  name: Blink
-  entities:
-    - switch.blink_1
-    - switch.blink_2
+#    - switch.christmas_tree
+#    - switch.christmas_lights
 
 harmony:
   name: Harmony

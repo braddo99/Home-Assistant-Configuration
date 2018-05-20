@@ -18,14 +18,9 @@ homeassistant:
   customize: !include rename.yaml
 
 recorder: !include recorder.yaml
+history: !include history.yaml
+logbook: !include logbook.yaml
 
-camera:
-  - platform: skybell
-
-  
-ecobee:
-  api_key: !secret ecobee_api
-  hold_temp: false
 
 skybell:
   username: !secret skybell_user
@@ -36,13 +31,23 @@ binary_sensor:
     monitored_conditions:
       - button
       - motion
-
+  
+camera:
+  - platform: skybell
+  
+ecobee:
+  api_key: !secret ecobee_api
+  hold_temp: false  
+  
 device_tracker:
   - platform: nmap_tracker
     hosts: 192.168.0.100-199
     home_interval: 10
     exclude: !secret hass_ip
+    track_new_devices: false
 #  - platform: bluetooth_tracker
+  - platform: bluetooth_le_tracker
+#  - device_id: YOUR_DEVICE_ID
 
 notify:
   - platform: pushbullet
@@ -87,12 +92,6 @@ discovery:
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
 
-# Enables support for tracking state changes over time.
-history:
-
-# View all events in a logbook
-logbook:
-
 # Track the sun
 sun:
 
@@ -103,19 +102,23 @@ tts:
 switch:
   - platform: wake_on_lan
     mac_address: !secret serverMac
-  - platform: tplink
-    name: "christmas tree"
-    host: !secret christmas_tree_IP
-  - platform: tplink
-    name: "blink_1"
-    host: !secret blink_1_IP
+#  - platform: tplink
+#    name: "christmas tree"
+#    host: !secret christmas_tree_IP
+#  - platform: tplink
+#    name: "blink_1"
+#    host: !secret blink_1_IP
   - platform: tplink
     name: "blink_2"
     host: !secret blink_2_IP
+  - platform: flux
+    name: "Flux"
+    lights:
+      - light.hue_lightstrip_plus_1
+      - light.office
 
 zwave:
   usb_path: /dev/ttyACM0
-  new_entity_ids: true
   network_key: !secret zwave_key
 
 light:
@@ -162,20 +165,31 @@ scene:
       switch.subwoofer:
         state: on
 
-  - name: Shut_down
+  - name: Shutdown
     entities:
       light.office:
         state: off
-      group.desk:
+      group.display:
+        state: off
+      group.bose:
         state: off
 
   - name: Startup
     entities:
+      switch.wake_on_lan:
+        state: on
       light.office:
          state: on
          color_temp: 300
          brightness: 255
-      group.desk:
+      group.bose:
         state: on
-      switch.wake_on_lan:
+      group.display:
         state: on
+
+  - name: Bath_Night_Light
+    entities:
+      light.hue_color_downlight_1:
+        state: on
+        brightness: 25
+        rgb_color: [255,0,0]
